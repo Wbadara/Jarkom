@@ -1,19 +1,19 @@
 [![Review Assignment Due Date](https://classroom.github.com/assets/deadline-readme-button-22041afd0340ce965d47ae6ef1cefeee28c7c493a6346c4f15d667ab976d596c.svg)](https://classroom.github.com/a/tPVgLsdF)
 | Name | NRP | Class |
 | ---- | --- | ----- |
-| ...  | ... | ...   |
+| Wahid Badar Abiddin  | 5025221025 | Jarkom A   |
 
 ## Task 1
 
 - Flag
 
-  `put your flag here`
+`JARKOM25{Ja0G_Bbbb4ng3t_S1_JLM0E1GT6AH5RTER0UYX2ZDOKNVFDU0xl0vel1hfc5u006a9d00ymc1ogwbb1_9ed732fa42b07d7b607686bcf8ee2116}`
 
 > a. Berapa banyak packet yang terekam pada file pcapng?
 
 > _a. How many packets are recorded in the pcapng file?_
 
-**Answer:** `put your answer here`
+**Answer:** `9596`
 
 - Filter expression
 
@@ -34,7 +34,7 @@
 
 > _b. How many types of protocol (totals) are recorded in the traffic?_
 
-**Answer:** `put your answer here`
+**Answer:** `12`
 
 - Filter expression
 
@@ -55,7 +55,7 @@
 
 > _c. How many types of TCP-based applications protocol are recorded in the traffic?_
 
-**Answer:** `put your answer here`
+**Answer:** `8`
 
 - Filter expression
 
@@ -76,7 +76,7 @@
 
 > _d. How many packets with pure TCP protocol are recorded in the traffic (without data)?_
 
-**Answer:** `put your answer here`
+**Answer:** `3223`
 
 - Filter expression
 
@@ -253,13 +253,13 @@
 
 - Flag
 
-  `put your flag here`
+  `JARKOM25{G04t__a4n4liz333er_RH8R4YB174XLCYX5N7H8fr0gbg1m0qcaghuinc7r3ys1723761467_f44807b5adb04d4035936e06fff6c5a0}`
 
 > a. Apa perintah pertama yang ditulis client pada koneksi telnet?
 
 > _a. What is the first command that client wrote on telnet connection?_
 
-**Answer:** `put your answer here`
+**Answer:** `echo`
 
 - Filter expression
 
@@ -280,7 +280,7 @@
 
 > _b. What is the name of .txt file on the server (write with the extension)?_
 
-**Answer:** `put your answer here`
+**Answer:** `test.txt`
 
 - Filter expression
 
@@ -301,7 +301,7 @@
 
 > _c. What is the first word that the client inserted into the previous file?_
 
-**Answer:** `put your answer here`
+**Answer:** `Jarkom`
 
 - Filter expression
 
@@ -412,13 +412,13 @@
 
 - Flag
 
-  `put your flag here`
+`JARKOM25{br0mb44rdin0u_Cr0ccc0c0c0cdi1l10l_6568748739awaesa8cjr61izyfsh1n0bu0VKSEUMY9HV6QZR_38834497141fb9b4b26519a9578f4251}`
 
 > a. Apakah kamu menemukan fake flag? Tuliskan seluruhnya!
 
 > _a. Did you find the fake flag? Write it whole!_
 
-**Answer:** `put your answer here`
+**Answer:** `FakeFlag{JarkomGampang}`
 
 - Filter expression
 
@@ -439,7 +439,7 @@
 
 > _b. Write the written username and password! (format username:password)_
 
-**Answer:** `put your answer here`
+**Answer:** `Rey:123`
 
 - Filter expression
 
@@ -460,13 +460,13 @@
 
 - Flag
 
-  `put your flag here`
+  `JARKOM25{tr4l4lel0_tr1lil1_4qb3bekajjk3b0s0sQXB7DFJ2W5127HJ_22df90cc1d9cc2780b2cb77930418245}`
 
 > Apa nama gambar yang direquest oleh client? (tulis dengan ekstensinya)
 
 > _What is the image that is being requested by the client? (write with its extension)_
 
-**Answer:** `put your answer here`
+**Answer:** `donalbebek.jpg`
 
 - Filter expression
 
@@ -625,13 +625,13 @@
 
 - Flag
 
-  `put your flag here`
+`JARKOM25{f1nisssshs55s5s533s_l1n333ee333E3_465605331129104vpsinsavm3452151231230ULGVQ16LZ0MMLE_a575ab2e1937a900e97a9f4d8cbd7424}`
 
 > a. Apa nama file yang mengandung string terencode?
 
 > _a. What is the filename that contains encoded string?_
 
-**Answer:** `put your answer here`
+**Answer:** `secret.txt`
 
 - Filter expression
 
@@ -652,7 +652,7 @@
 
 > _b. What is the filename of the previous file copy?_
 
-**Answer:** `put your answer here`
+**Answer:** `secret1.txt`
 
 - Filter expression
 
@@ -673,7 +673,7 @@
 
 > _c. Apa decoded string dari file tersebut?_
 
-**Answer:** `put your answer here`
+**Answer:** `Pada suatu hari Rey bertemu dengan Nailong the Milk Dragon. Ketika bertemu, Rey mengajarkan Nailong apa itu Jaringan Komputer. Nailong pun senang karena ternyata Jaringan Komputer itu gampang.`
 
 - Filter expression
 
