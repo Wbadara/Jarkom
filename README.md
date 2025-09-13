@@ -274,15 +274,19 @@
 
 - Filter expression
 
-  `put your filter here (if any)`
+  `telnet`
 
 - Explanation
 
-  `put your explanation here`
+  `Melakukan filter telnet agar hanya menampilkan packet yang berbasis telnet. Kemudian melakukan follow stream pada salah satu komunikukasi agar dapat melihat seluruh percakapan antara server dan client. Namun untuk melihat perintah pertama yang ditulis client kita bisa tau dengan filter client to server agar hanya menampilkan percakapan client ke server.`
+
+  <img width="1256" height="896" alt="Screenshot 2025-09-13 223855" src="https://github.com/user-attachments/assets/d3604b8e-2a18-43d2-ab20-99532bd9c42c" />
+
+  `Filternya ada di bagian bawah yang bertuliskan ip:port client to ip:port server.`
 
 - Output result
 
-  `put your output result here`
+  `Tertera untuk perintah pertamanya adalah 'echo'.`
 
   <br>
   <br>
@@ -295,15 +299,19 @@
 
 - Filter expression
 
-  `put your filter here (if any)`
+  `telnet`
 
 - Explanation
 
-  `put your explanation here`
+  `Caranya sama dengan mencari perintah pertama client, namun karena kita mencari di server maka kita menggunakan filter server to client.`
+
+  <img width="1374" height="893" alt="Screenshot 2025-09-13 224437" src="https://github.com/user-attachments/assets/1935c336-5be6-486c-aa3d-80a7a2eb5737" />
+
+  `Filternya ada di bagian bawah yang bertuliskan ip:port server to ip:port client.`
 
 - Output result
 
-  `put your output result here`
+  `Nama file txt adalah test.txt`
 
   <br>
   <br>
@@ -316,15 +324,17 @@
 
 - Filter expression
 
-  `put your filter here (if any)`
+  `telnet`
 
 - Explanation
 
-  `put your explanation here`
+  `Kembali kita melihat ke komunikasi antara client dan server untuk mencari tahu kata pertama dari frasa yang dimasukkan client.`
+
+  <img width="1256" height="896" alt="Screenshot 2025-09-13 223855" src="https://github.com/user-attachments/assets/a3125f2d-537c-41ed-9b21-d5c7315587e1" />
 
 - Output result
 
-  `put your output result here`
+  `Kata pertama dari frasa yang dikirim client adalah 'Jarkom'.`
 
   <br>
   <br>
@@ -737,5 +747,7 @@
   <br>
 
 ## Summary
+  `Di praktikum modul 1 ini saya belajar mengidentifikasi dan menganalisa packet di wireshark. Saya melakukan koneksi ke suatu server menggunakan netcat untuk menjawab soal soal praktikum. Seperti halnya CTF (Capture The Flag), saya harus mendapatkan flagnya dengan menjawab semua pertanyaan dengan benar.`
 
 ## Problems
+  `Untuk kesulitannya mungkin adalah wawasan terhadap ekspresi filter yang masih sedikit. Untuk penyelesaian dari tasknya sendiri, ketika praktikum saya hanya berhasil mendapat 5 flags, namun di hari sabtu saya mencoba mengerjakan lagi yang belum berhasil dan akhirnya saya bisa mendapatkan 4 flags lagi. Tersisa 1 flag yakni task 2 yang belum terpecahkan oleh saya.`
