@@ -87,15 +87,19 @@
 
 - Filter expression
 
-  `put your filter here (if any)`
+  `tcp && !http && !vnc && !thrift && !hipercontracer && !sigcomp && !telnet && !data`
 
 - Explanation
 
-  `put your explanation here`
+  `Filter yang saya gunakan adalah untuk menamplkan packet yang berbasis tcp dan menyembunyikan packet yang berbasis http, vnc, thrift, hypercontrol, sigcomp, telnet serta menyembunyikan packet yang hanya berisi data.`
+
+  <img width="1862" height="969" alt="Screenshot 2025-09-14 001456" src="https://github.com/user-attachments/assets/a5713399-faab-4167-a3de-63fbb8e6598d" />
+  
+  `Jumlah packet dapat dilihat di sisi kanan bawah.`
 
 - Output result
 
-  `put your output result here`
+  `Tertera packets: 3223.`
 
 ## Task 2
 
