@@ -21,11 +21,14 @@
 
 - Explanation
 
-  `put your explanation here`
+  `Untuk melihat banyaknya packet yang terekam pada file cukup melihat di sisi kanan bawah.`
+  
+  <img width="1912" height="1014" alt="Screenshot 2025-09-11 192443" src="https://github.com/user-attachments/assets/7cd9251a-d2fc-4af6-80a2-0df7af36f649" />
+
 
 - Output result
 
-  `put your output result here`
+  `Di sisi kanan bawah terlihat tulisan packets:9596, jadi banyaknya packet adalah 9596.`
 
 <br>
 <br>
@@ -42,11 +45,15 @@
 
 - Explanation
 
-  `put your explanation here`
+  `Untuk melihat banyaknya jenis protocol yang terekam pada traffic bisa melalui menu Statistics, kemudian pilih Protocol Hierarchy.`
+
+  <img width="1525" height="677" alt="Screenshot 2025-09-11 193124" src="https://github.com/user-attachments/assets/e5669d08-e11c-4693-a4d1-554c4d3f5616" />
+
+  `Muncul sebuah tab yang akan menampilkan informasi mengenai protocol yang ada.`
 
 - Output result
 
-  `put your output result here`
+  `Terdapat 12 protocol yang ditampilkan.`
 
 <br>
 <br>
@@ -63,11 +70,11 @@
 
 - Explanation
 
-  `put your explanation here`
+  `Untuk menjawab ini, dapat dilihat lagi pada tab Protocol Hierarchy. Namun karena yang diminta banyaknya protocol yang berbasis TCP maka cukup lihat yang ada di bagian Transmission Control Protocol (TCP).`
 
 - Output result
 
-  `put your output result here`
+  `Terdapat 8 protocol yang ditampilkan.`
 
   <br>
   <br>
@@ -169,19 +176,23 @@
 
 > _a. In what port is the telnet client open?_
 
-**Answer:** `put your answer here`
+**Answer:** `54184`
 
 - Filter expression
 
-  `put your filter here (if any)`
+  `telnet`
 
 - Explanation
 
-  `put your explanation here`
+  `Saya memfilter packet dengan kata kunci telnet agar hanya menampilkan packet yang berbasis telnet.`
+
+  <img width="1912" height="619" alt="Screenshot 2025-09-13 210926" src="https://github.com/user-attachments/assets/85b1fdff-6ec2-441c-91fa-9aab00bdc14a" />
+
+  `Kemudian di bagian bawah kiri terdapat deskipsi dari Packet telnet. Kita bisa melihat bagian TCP, disana tertulis source port maupun destination portnya. Port yang digunakan oleh client adalah destination port.`
 
 - Output result
 
-  `put your output result here`
+  `Destination Port: 54184`
 
   <br>
   <br>
@@ -328,19 +339,23 @@
 
 > _a. How many HTTP packets are recorded in the pcapng file?_
 
-**Answer:** `put your answer here`
+**Answer:** `298`
 
 - Filter expression
 
-  `put your filter here (if any)`
+  `http`
 
 - Explanation
 
-  `put your explanation here`
+  `Saya memfilter packet dengan kata kunci http agar hanya menampilkan packet yang berbasis http.`
+
+  <img width="1916" height="1010" alt="Screenshot 2025-09-11 202148" src="https://github.com/user-attachments/assets/947543d9-befb-43f4-92b6-eff115525fc3" />
+
+  `Untuk melihat banyaknya packet http cukup melihat di sisi kanan bawah.`
 
 - Output result
 
-  `put your output result here`
+  `Di sisi kanan bawah terlihat tulisan packets:298, jadi banyaknya packet http adalah 298.`
 
   <br>
   <br>
@@ -349,19 +364,23 @@
 
 > _b. How many response HTTP packets are recorded in the traffic?_
 
-**Answer:** `put your answer here`
+**Answer:** `149`
 
 - Filter expression
 
-  `put your filter here (if any)`
+  `http.response`
 
 - Explanation
 
-  `put your explanation here`
+  `Saya memfilter packet dengan kata kunci http.response agar hanya menampilkan packet http yang berupa response.`
+
+  <img width="1914" height="1009" alt="Screenshot 2025-09-11 202214" src="https://github.com/user-attachments/assets/ae8fac73-5a59-4f35-bb47-044a491112e5" />
+
+   `Untuk melihat banyaknya packet http yang berupa response cukup melihat di sisi kanan bawah.`
 
 - Output result
 
-  `put your output result here`
+  `Di sisi kanan bawah terlihat tulisan packets:149, jadi banyaknya packet http yang berupa response adalah 149`
 
   <br>
   <br>
@@ -422,15 +441,21 @@
 
 - Filter expression
 
-  `put your filter here (if any)`
+  `http.request`
 
 - Explanation
 
-  `put your explanation here`
+  `Saya memfilter packet dengan kata kunci http.request agar hanya menampilkan packet http yang berupa request karena fake flag berada di file yang direquest oleh client. Kemudian saya cari file flag.txt yang berisikan fake flag.`
+
+  <img width="1848" height="491" alt="Screenshot 2025-09-13 195513" src="https://github.com/user-attachments/assets/100d79b0-a279-46c6-a19b-e7221469c000" />
+
+  `Setelah menemukan file flag.txt, saya melakukan follow stream agar dapat melihat seluruh percakapan file tersebut.`
+
+  <img width="496" height="395" alt="Screenshot 2025-09-11 215232" src="https://github.com/user-attachments/assets/0341741f-74c6-4d43-bc9a-ac23bca42fbd" />
 
 - Output result
 
-  `put your output result here`
+  `Tertulis FakeFlag{JarkomGampang} di file tersebut.`
 
   <br>
   <br>
@@ -443,15 +468,21 @@
 
 - Filter expression
 
-  `put your filter here (if any)`
+  `http.request`
 
 - Explanation
 
-  `put your explanation here`
+  `Saya memfilter packet dengan kata kunci http.request agar hanya menampilkan packet http yang berupa request karena file yang berisikan username dan password pasti direquest oleh client. Kemudian saya cari file lain yang kemungkinan berisikan username dan password.`
+
+  <img width="1852" height="397" alt="Screenshot 2025-09-13 200701" src="https://github.com/user-attachments/assets/e7871c3a-123c-4e23-b357-dac025ec9df8" />
+
+  `Setelah menemukan file tersebut, saya melakukan follow stream agar dapat melihat seluruh percakapan filenya.`
+
+  <img width="575" height="410" alt="Screenshot 2025-09-11 215245" src="https://github.com/user-attachments/assets/b5096307-37f5-421a-a6ce-663eb3efc8f8" />
 
 - Output result
 
-  `put your output result here`
+  `Tertuis username: Rey dan password: 123.`
 
   <br>
   <br>
@@ -470,15 +501,17 @@
 
 - Filter expression
 
-  `put your filter here (if any)`
+  `http.request`
 
 - Explanation
 
-  `put your explanation here`
+  `Gambar yang direquest oleh client dapat kita lihat dari menerapkan filter http.request kemudian cari file dengan ekstensi jpg.`
+
+  <img width="1846" height="406" alt="Screenshot 2025-09-13 201405" src="https://github.com/user-attachments/assets/b30ac018-2d50-46f2-bcb7-c22f34d3ad00" />
 
 - Output result
 
-  `put your output result here`
+  `Terdapat file donalbebek.jpg`
 
   <br>
   <br>
@@ -562,19 +595,22 @@
 
 > _a. What is the FTP server IP Address?_
 
-**Answer:** `put your answer here`
+**Answer:** `172.16.16.101`
 
 - Filter expression
 
-  `put your filter here (if any)`
+  `ftp`
 
 - Explanation
 
-  `put your explanation here`
+  `Melakukan filter ftp agar hanya menampilkan packet yang berbasis ftp. Kemudian untuk melihat alamat IP dari ftp server kita dapat melihat di deskripsi Internet Protocol pada bagian kiri bawah.`
+
+  <img width="1896" height="656" alt="Screenshot 2025-09-13 210600" src="https://github.com/user-attachments/assets/52e242ae-ed58-4f36-b638-d07af98308bb" />
+
 
 - Output result
 
-  `put your output result here`
+  `IP ftp server adalah IP source yaitu 172.16.16.101`
 
   <br>
   <br>
@@ -635,15 +671,17 @@
 
 - Filter expression
 
-  `put your filter here (if any)`
+  `ftp.request`
 
 - Explanation
 
-  `put your explanation here`
+  `Dengan menerapkan filter ftp.request maka hanya akan memunculkan packet ftp yang direquest oleh client. Kemudian cari file txt yang berisikan string terencode.`
+
+  <img width="1851" height="402" alt="Screenshot 2025-09-13 202711" src="https://github.com/user-attachments/assets/3cdf462c-5e6e-4c5e-afb6-cccb7a9c83d0" />
 
 - Output result
 
-  `put your output result here`
+  `Tertulis nama filenya yaitu secret.txt`
 
   <br>
   <br>
@@ -656,15 +694,19 @@
 
 - Filter expression
 
-  `put your filter here (if any)`
+  `ftp.request`
 
 - Explanation
 
-  `put your explanation here`
+  `Masih sama seperti mencari file yang berisikan string terencode. Namun dalam mencari file hasil copy kita dapat mencari dengan melihat file apa yang diupload lagi.`
+
+  <img width="1850" height="404" alt="Screenshot 2025-09-13 203410" src="https://github.com/user-attachments/assets/72783738-3715-4ed2-99a0-9b7f3b4295ed" />
+
+  `RETR adalah "Retrieve" atau mengunduh file. MDTM adalah "Modification Date/Time" atau kapan terakhir modifikasi file. STOR adalah "Store" atau mengunggah file.`
 
 - Output result
 
-  `put your output result here`
+  `Tertera nama filenya yaitu secret1.txt`
 
   <br>
   <br>
@@ -677,15 +719,19 @@
 
 - Filter expression
 
-  `put your filter here (if any)`
+  `ftp.request`
 
 - Explanation
 
-  `put your explanation here`
+  `Setelah menemukan file yang berisikan string terencode yaitu secret.txt. Sekarang kita akan melihat isi dari file tersebut agar dapat melakukan decode. Untuk dapat melihatnya kita perlu mengekspor file dengan fitur Export Object lalu kita buka dengan notepad karena file txt.`
+
+  <img width="1423" height="122" alt="Screenshot 2025-09-13 205643" src="https://github.com/user-attachments/assets/fefdf220-ba21-42df-89e9-39425bf349e7" />
+
+  `Setelah mengetahui isinya, saatnya melakukan decode,`
 
 - Output result
 
-  `put your output result here`
+  `Decode dari stringnya adalah Pada suatu hari Rey bertemu dengan Nailong the Milk Dragon. Ketika bertemu, Rey mengajarkan Nailong apa itu Jaringan Komputer. Nailong pun senang karena ternyata Jaringan Komputer itu gampang.`
 
   <br>
   <br>
