@@ -55,7 +55,7 @@
 - Explanation
 
   `Put your explanation in here :
-  Pertama saya melaakukan konfigurasi pada masing masing router dan server sesuai dengan tabel subnet yang tellah saya buat. Selanjutnya menambahkan ping pada masing masing client juga sesui tabel. Jalankan perintah " ip route add [subnet tujuan/24] via [gateway yang terhubung] " pada masing masing routeragar dapat meneruskan paket. Pada client jalankan perintah " route add default gw [gateway yang tergubung] " sehingga bisa mengirimkan paket. Selanjutnya bisa uji konektivitas dengan ping.`
+  Pertama saya melaakukan konfigurasi pada masing masing router dan server sesuai dengan tabel subnet yang tellah saya buat. Selanjutnya menambahkan ping pada masing masing client juga sesui tabel. Jalankan perintah "ip route add [subnet tujuan/24] via [gateway yang terhubung]" pada masing masing routeragar dapat meneruskan paket. Pada client jalankan perintah "route add default gw [gateway yang tergubung]" sehingga bisa mengirimkan paket. Selanjutnya bisa uji konektivitas dengan ping.`
 
 <br>
 
@@ -80,7 +80,7 @@
 - Explanation
 
   `Put your explanation in here:
-  Pertama saya dapat alamat ip dinamis yaitu 192.168.122.184 maka saya tambahkan default gateway menuju NAT di router IronMan engan perintah " ip route add 0.0.0.0/0 via 192.168.122.1 ". Kemudian di router lainnya jalankan perintah " ip route add 0.0.0.0/0 via [gateway menuju IronMan] ". Di node jalnkan perintah " nano /etc/resolv.conf " ydidalam nano tambahkan tulisan 'nameserver 8.8.8.8' yang bertujuan menambahkan DNS Server. Lanjut melakukan ping ke google.com`
+  Pertama saya dapat alamat ip dinamis yaitu 192.168.122.184 maka saya tambahkan default gateway menuju NAT di router IronMan engan perintah "ip route add 0.0.0.0/0 via 192.168.122.1" dan "iptables -t nat -A POSTROUTING -o eth0 -j MASQUERADE" untuk melakukan NAT saat paket keluar melalui interface. Kemudian di router lainnya jalankan perintah "ip route add 0.0.0.0/0 via [gateway menuju IronMan]". Di node jalnkan perintah "nano /etc/resolv.conf" di dalam nano tambahkan tulisan 'nameserver 8.8.8.8' yang bertujuan menambahkan DNS Server. Lanjut melakukan ping ke google.com`
 
 <br>
 
@@ -106,10 +106,19 @@
 
   `Put your screenshot in here`
 
+  <img width="811" height="319" alt="Screenshot 2025-10-03 235325" src="https://github.com/user-attachments/assets/9932a742-dedf-4934-a106-d1228378f013" />
+  <img width="817" height="304" alt="Screenshot 2025-10-03 235342" src="https://github.com/user-attachments/assets/202a1611-e92a-411f-a0f8-d0bd8b4516e0" />
+  <img width="808" height="280" alt="Screenshot 2025-10-03 235404" src="https://github.com/user-attachments/assets/a6038572-ceb4-4364-9a86-297ce6e19c6d" />
+
+
 - Explanation
 
-  `Put your explanation in here`
+  `Put your explanation in here :
+  Pertama saya melakukan routing pada routers agar dapat mengakses internet, untuk caranya sama dengan no 3 yang berbeda hanya DHCP Server dan DHCP Relay yang memiliki ip statis dan client belum dapat ip dinamis serta ip statis yang dipakai pada DHCP Server dan DHCP Relay yang berbeda.`
+  
+  <img width="1008" height="577" alt="Screenshot 2025-10-03 235622" src="https://github.com/user-attachments/assets/72c318d4-16fa-4171-82b1-458a2d443bdc" />
 
+   `Setelah terhubung internet, melakukan "apt-get update" dan "apt-get install isc-dhcp-server" pada server. Dan selanjutnya ikuti cara pada modul untuk set DHCP server dan DHCP Relay.`
 <br>
 
 ## Soal 5
@@ -229,4 +238,3 @@
 ## Problems
 
 ## Revisions (if any)
-
