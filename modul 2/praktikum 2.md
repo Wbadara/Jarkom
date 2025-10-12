@@ -131,12 +131,15 @@
 
   `Put your screenshot in here`
 
-  ![ip](gambar/ipT.png)
-  ![ip](gambar/ipSW.png)
+  ![fix](gambar/ipSW.png)
+  ![fix](gambar/ipT.png)
 
 - Explanation
 
   `Put your explanation in here`
+  tambahkan config di /etc/dhcp/dhcpd.conf
+  
+  kemudian restart server
 
 <br>
 
@@ -158,7 +161,10 @@
 - Explanation
 
   `Put your explanation in here`
-
+  tambahkan config di /etc/dhcp/dhcpd.conf
+  
+  kemudian restart server
+  
 <br>
 
 ## Soal 7
