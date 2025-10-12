@@ -206,11 +206,15 @@
 - Screenshot
 
   `Put your screenshot in here`
+  ![1](gambar/ipHE8.png)
+  ![2](gambar/ipSM8.png)
+  ![3](gambar/ipT8.png)
 
 - Explanation
 
   `Put your explanation in here`
-
+  tambahkan konfigurasi 
+  ![z](gambar/conf8.png)
 <br>
 
 ## Soal 9
