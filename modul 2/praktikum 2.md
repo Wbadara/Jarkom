@@ -9,7 +9,7 @@
 
 `Put your image here`
 
-![Topologi](Gambar/Topologi.png)
+![Topologi](gambar/Topologi.png)
 
 ## Put your GNS3 Project file here!
 
@@ -29,7 +29,7 @@
 
   `Put your screenshot in here`
   
-  ![Subnet](Gambar/Subnet1.png)
+  ![Subnet](gambar/Subnet1.png)
 
 - Explanation
 
@@ -48,9 +48,9 @@
 - Screenshot
   `Put your screenshot in here`
   
-  <img width="664" height="291" alt="Screenshot 2025-10-03 185709" src="https://github.com/user-attachments/assets/8aca3c77-e377-49d0-af1b-6303fef86a37" />
-  <img width="671" height="269" alt="Screenshot 2025-10-03 192653" src="https://github.com/user-attachments/assets/4f9a1470-81a8-489d-95b4-a561b038454f" />
-  <img width="647" height="281" alt="Screenshot 2025-10-03 192718" src="https://github.com/user-attachments/assets/3f6b49ce-2722-4734-b74c-494add4a63e8" />
+  ![ping](gambar/pingFtoSM.png)
+  ![ping](gambar/pingFtoDS.png)
+  ![ping](gambar/pingFtoSW.png)
 
 - Explanation
 
@@ -71,11 +71,10 @@
 
   `Put your screenshot in here`
   
-  <img width="821" height="375" alt="Screenshot 2025-10-03 200118" src="https://github.com/user-attachments/assets/6d3e639a-1710-4829-b861-ec7cf1df8517" />
-  <img width="811" height="347" alt="Screenshot 2025-10-03 200921" src="https://github.com/user-attachments/assets/67bf224f-2027-44dc-8333-161cefcf1aa2" />
-  <img width="809" height="298" alt="Screenshot 2025-10-03 201329" src="https://github.com/user-attachments/assets/9b76de08-d370-4ff2-99b5-fe1b25440d72" />
-  <img width="797" height="316" alt="Screenshot 2025-10-03 201543" src="https://github.com/user-attachments/assets/bb805e0d-4812-42e5-bb6d-de8b115b258c" />
-
+  ![google](gambar/pingFtogoogle.png)
+  ![google](gambar/pingCAtogoogle.png)
+  ![google](gambar/pingSMtogoogle.png)
+  ![google](gambar/pingTtogoogle.png)
 
 - Explanation
 
@@ -105,19 +104,18 @@
 - Screenshot
 
   `Put your screenshot in here`
-
-  <img width="811" height="319" alt="Screenshot 2025-10-03 235325" src="https://github.com/user-attachments/assets/9932a742-dedf-4934-a106-d1228378f013" />
-  <img width="817" height="304" alt="Screenshot 2025-10-03 235342" src="https://github.com/user-attachments/assets/202a1611-e92a-411f-a0f8-d0bd8b4516e0" />
-  <img width="808" height="280" alt="Screenshot 2025-10-03 235404" src="https://github.com/user-attachments/assets/a6038572-ceb4-4364-9a86-297ce6e19c6d" />
-
+  
+  ![ip](gambar/ipF.png)
+  ![ip](gambar/ipHE.png)
+  ![ip](gambar/ipH.png)
 
 - Explanation
 
   `Put your explanation in here :
   Pertama saya melakukan routing pada routers agar dapat mengakses internet, untuk caranya sama dengan no 3 yang berbeda hanya DHCP Server dan DHCP Relay yang memiliki ip statis dan client belum dapat ip dinamis serta ip statis yang dipakai pada DHCP Server dan DHCP Relay yang berbeda.`
   
-  <img width="1008" height="577" alt="Screenshot 2025-10-03 235622" src="https://github.com/user-attachments/assets/72c318d4-16fa-4171-82b1-458a2d443bdc" />
-
+  [Subnet](gambar/Subnet2.png)
+  
    `Setelah terhubung internet, melakukan "apt-get update" dan "apt-get install isc-dhcp-server" pada server. Dan selanjutnya ikuti cara pada modul untuk set DHCP server dan DHCP Relay.`
 <br>
 
