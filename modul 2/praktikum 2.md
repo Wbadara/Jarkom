@@ -131,6 +131,9 @@
 
   `Put your screenshot in here`
 
+  ![ip](gambar/ipT.png)
+  ![ip](gambar/ipSW.png)
+
 - Explanation
 
   `Put your explanation in here`
@@ -148,6 +151,9 @@
 - Screenshot
 
   `Put your screenshot in here`
+
+  ![ip](gambar/ipSM.png)
+  ![ip](gambar/ipDS.png)
 
 - Explanation
 
