@@ -1,4 +1,4 @@
-[![Review Assignment Due Date](https://classroom.github.com/assets/deadline-readme-button-22041afd0340ce965d47ae6ef1cefeee28c7c493a6346c4f15d667ab976d596c.svg)](https://classroom.github.com/a/1niUih_B)
+
 | Name           | NRP        | Kelas     |
 | ---            | ---        | ----------|
 | Wahid Badar Abiddin | 5025221025 | JarKom A |
@@ -9,7 +9,7 @@
 
 `Put your image here`
 
-<img width="1144" height="742" alt="Screenshot 2025-10-02 193354" src="https://github.com/user-attachments/assets/29de6f09-64a2-4632-ae21-ec32f683c333" />
+![Topologi](Gambar/Topologi.png)
 
 ## Put your GNS3 Project file here!
 
@@ -29,7 +29,7 @@
 
   `Put your screenshot in here`
   
-  ![Dokumentasi Subnet](https://github.com/user-attachments/assets/55ad6388-53f7-46aa-b63d-18d15ab7c975)
+  ![Subnet](Gambar/Subnet1.png)
 
 - Explanation
 
