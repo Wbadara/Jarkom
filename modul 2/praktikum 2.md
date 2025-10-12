@@ -29,7 +29,7 @@
 
   `Put your screenshot in here`
   
-  ![Subnet](gambar/Subnet1.png)
+  ![Subnet](gambar/Subnet1.jpg)
 
 - Explanation
 
@@ -114,7 +114,7 @@
   `Put your explanation in here :
   Pertama saya melakukan routing pada routers agar dapat mengakses internet, untuk caranya sama dengan no 3 yang berbeda hanya DHCP Server dan DHCP Relay yang memiliki ip statis dan client belum dapat ip dinamis serta ip statis yang dipakai pada DHCP Server dan DHCP Relay yang berbeda.`
   
-  [Subnet2](gambar/Subnet4.png)
+  [Kelompok Subnet](gambar/Subnet4.png)
   
    `Setelah terhubung internet, melakukan "apt-get update" dan "apt-get install isc-dhcp-server" pada server. Dan selanjutnya ikuti cara pada modul untuk set DHCP server dan DHCP Relay.`
 <br>
