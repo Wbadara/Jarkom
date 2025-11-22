@@ -66,6 +66,15 @@ _Also include the subnet table and diagram in the lab report._
   ```
   ping google.com -c 5
   ```
+  lalu install iptables
+  ```
+  apt-get update
+  apt-get install iptables
+  ```
+  pasang aturan iptables untuk NAT
+  ```
+  iptables -t nat -A POSTROUTING -o eth3 -j MASQUERADE
+  ```
 
 <br>
 
@@ -122,6 +131,7 @@ _Ensure all existing nodes can access the internet._
   network 10.3.2.228/30
   network 10.3.2.232/30
   network 10.3.2.236/30
+  default-information originate    (untuk menyebarkan static routing)
   
   router 3
   network 10.3.2.232/30
