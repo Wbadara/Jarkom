@@ -138,7 +138,9 @@
 
   `Put your explanation in here`
   tambahkan config di /etc/dhcp/dhcpd.conf
+  
   ![C](gambar/conf5.png)
+  
   kemudian restart server
 
 <br>
@@ -162,7 +164,9 @@
 
   `Put your explanation in here`
   tambahkan config di /etc/dhcp/dhcpd.conf
+  
   ![K](gambar/conf6.png)
+  
   kemudian restart server
   
 <br>
@@ -191,6 +195,7 @@
 
   `Put your explanation in here`
   ubah konfigurasi menyesuaikan leasing time
+  
   ![b](gambar/conf7.png)
   
 <br>
@@ -213,7 +218,8 @@
 - Explanation
 
   `Put your explanation in here`
-  tambahkan konfigurasi 
+  tambahkan konfigurasi
+  
   ![z](gambar/conf8.png)
 <br>
 
