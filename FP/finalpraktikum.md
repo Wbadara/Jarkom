@@ -188,7 +188,6 @@
       range 10.3.54.1 10.3.54.20;
       option routers 10.3.33.1;
       option broadcast-address 10.3.54.255;
-      option domain-name-servers 10.3.1.28;
       default-lease-time 300;
       max-lease-time 6900;
   }
@@ -197,7 +196,6 @@
       range 10.3.14.1 10.3.14.20;
       option routers 10.3.9.1;
       option broadcast-address 10.3.14.255;
-      option domain-name-servers 10.3.1.28;
       default-lease-time 300;
       max-lease-time 6900;
   }
@@ -269,7 +267,7 @@
   ```
   service isc-dhcp-server restart
   ```
-  Kemudian pada router kita konfigurasi sebagai DHCP-Relay 
+  Kemudian semua router kita konfigurasi sebagai DHCP-Relay 
   ```
   apt-get update
   apt-get install isc-dhcp-relay -y
@@ -996,11 +994,67 @@ On the **Caro-Kann DNS Master,** then add the www subdomain for both domains._
 
 - Screenshot
 
-  `Put your screenshot in here`
+  ![Ping Alekhine-Budapest](gambar/atob.png)
+
+  ![Ping Sicilian-Ponziani](gambar/sctop.png)
 
 - Explanation
 
-  `Put your explanation in here`
+  Hapus semua pengaturan static routing yang ada pada router dengan perintah
+  ```
+  ip route del [subnet tujuan/netmask] via [gateway yang terhubung]
+  ```
+  Lakukan pengaturan pada semua router dengan menggunakan dynamic routing
+  ```
+  cd /usr/lib/frr
+  ```
+  Lalu nyalakan semua service yang diperlukan
+  ```
+  ./zebra -d
+  ./ripd -d
+  ./mgmtd -d
+  ```
+  Sekarang kita akan mengatur FRR di masing masing router
+  ```
+  vtysh
+  ```
+  Menjalankan command berikut di dalam `vtysh`
+  ```
+  conf t
+  router rip
+  ```
+  Selanjutnya tambahkan network yang terhubung
+  ```
+  ## Router Lucena
+  network 10.3.1.64/26
+  network 10.3.1.32/29
+
+  ## Router Zwischenzug
+  network 10.3.1.8/29
+  network 10.3.1.32/29
+
+  ## Router Zugzwang
+  network 10.3.1.128/25
+  network 10.3.1.16/28
+  network 10.3.2.0/24
+  network 10.3.1.8/29
+
+  ## Router Fianchetto
+  network 10.3.1.32/29
+  network 10.3.1.0/30
+
+  ## Router Smith-Morra
+  network 10.3.32.0/19
+  network 10.3.8.0/21
+  network 10.3.1.0/30
+  default-information originate
+  ```
+  Untuk kembali ke tampilan semua bisa dengan command `exit`
+  ```
+  exit
+  cd   --> untuk kembali ke direktori awal
+  ```
+  Untuk pengujian melakukan `ping` sama seperti no 2 namun dibalik, jadi dari Alekhine ke Budapest dan Sicilian ke Ponziani.
 
 <br>
 
@@ -1014,11 +1068,33 @@ On the **Caro-Kann DNS Master,** then add the www subdomain for both domains._
 
 - Screenshot
 
-  `Put your screenshot in here`
+  ![No 13](gambar/no13.png)
 
 - Explanation
 
-  `Put your explanation in here`
+  Kita akan menerapkan firewall iptables
+  ```
+  ## Infomasi:
+  Subnet Clent --> 10.3.8.0/21 dan 10.3.32.0/19
+  IP Caro-Kann --> 10.3.1.28
+  IP Alekhine  --> 10.3.1.29
+  Port SSH     --> 22
+  ```
+  ```
+  iptables -A FORWARD -p tcp --dport 22 -s 10.3.8.0/21 -d 10.3.1.28 -j DROP
+
+  iptables -A FORWARD -p tcp --dport 22 -s 10.3.32.0/19 -d 10.3.1.28 -j DROP
+
+  iptables -A FORWARD -p tcp --dport 22 -s 10.3.8.0/21 -d 10.3.1.29 -j DROP
+
+  iptables -A FORWARD -p tcp --dport 22 -s 10.3.32.0/19 -d 10.3.1.29 -j DROP
+  ```
+  Setelah itu uji di Client
+  ```
+  ssh root@10.3.1.28
+  ssh root@10.3.1.29
+  ```
+  Jika tidak menghasilkan apa-apa atau setelah lama menunggu menghasilkan Connection timed out maka semua paket berhasil di drop.
 
 <br>
 
@@ -1032,11 +1108,52 @@ On the **Caro-Kann DNS Master,** then add the www subdomain for both domains._
 
 - Screenshot
 
-  `Put your screenshot in here`
+  ![No 14](gambar/no14.png)
+
+  Hasil yang pertama adalah ketika saya atur waktu pada `date -s "2025-12-07 14:00:00"`, kemudian hasil yang kedua ketika saya atur waktu pada `date -s "2025-12-08 10:00:00"`.
 
 - Explanation
 
-  `Put your explanation in here`
+  Kita akan menerapkan firewall iptables pad roter Smith_moRRa yang terhubung dengan client
+  ```
+  ## Informasi
+  Subnet Clent --> 10.3.8.0/21 dan 10.3.32.0/19
+  IP Sicilian  --> 10.3.1.235
+  IP Slav      --> 10.3.2.215
+  Port Web     --> 80 (paskarov.com -- sicilian)      8000 (parkov.com -- slav)
+  ```
+  ```
+  ## ACCEPT pada weekdays jam 9 sampai 17
+  iptables -A FORWARD -p tcp -s 10.3.8.0/21 -d 10.3.1.235 -m multiport --dports 80,8000 -m time --weekdays Mon,Tue,Wed,Thu,Fri --timestart 09:00:00 --timestop 17:00:00 -j ACCEPT
+
+  iptables -A FORWARD -p tcp -s 10.3.8.0/21 -d 10.3.2.215 -m multiport --dports 80,8000 -m time --weekdays Mon,Tue,Wed,Thu,Fri --timestart 09:00:00 --timestop 17:00:00 -j ACCEPT
+
+  iptables -A FORWARD -p tcp -s 10.3.32.0/19 -d 10.3.1.235 -m multiport --dports 80,8000 -m time --weekdays Mon,Tue,Wed,Thu,Fri --timestart 09:00:00 --timestop 17:00:00 -j ACCEPT
+
+  iptables -A FORWARD -p tcp -s 10.3.32.0/19 -d 10.3.2.215 -m multiport --dports 80,8000 -m time --weekdays Mon,Tue,Wed,Thu,Fri --timestart 09:00:00 --timestop 17:00:00 -j ACCEPT
+  ```
+  ```
+  ## DROP selain waktu yang ditentukan
+  iptables -A FORWARD -p tcp -s 10.3.8.0/21 -d 10.3.1.235 -m multiport --dports 80,8000 -j DROP
+  
+  iptables -A FORWARD -p tcp -s 10.3.8.0/21 -d 10.3.2.215 -m multiport --dports 80,8000 -j DROP
+
+  iptables -A FORWARD -p tcp -s 10.3.32.0/19 -d 10.3.1.235 -m multiport --dports 80,8000 -j DROP
+  
+  iptables -A FORWARD -p tcp -s 10.3.32.0/19 -d 10.3.2.215 -m multiport --dports 80,8000 -j DROP
+  ```
+  Kemudian uji dari client dengan mengubah waktu pada router Smith Morra
+  ```
+  ## Router
+  date -s "[tahun]-[bulan]-[tanggal] [jam]:[menit]:[detik]"
+  contoh ==> date -s "2025-12-07 14:00:00"
+
+  ## Client
+  curl paskarov.com
+  curl 10.3.1.235
+  curl parkov.com:8000
+  curl 10.3.2.215:8000
+  ```
 
 <br>
 
@@ -1060,4 +1177,3 @@ On the **Caro-Kann DNS Master,** then add the www subdomain for both domains._
 ## Problems
 
 ## Revisions (if any)
-
